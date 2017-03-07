@@ -1,0 +1,1 @@
+json.array! @stock_keeping_units, partial: 'stock_keeping_units/stock_keeping_unit', as: :stock_keeping_unit

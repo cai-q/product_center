@@ -1,0 +1,1 @@
+json.array! @standard_product_units, partial: 'standard_product_units/standard_product_unit', as: :standard_product_unit

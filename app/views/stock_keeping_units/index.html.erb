@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Stock Keeping Units</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Storage</th>
+      <th>Standard product unit</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stock_keeping_units.each do |stock_keeping_unit| %>
+      <tr>
+        <td><%= stock_keeping_unit.title %></td>
+        <td><%= stock_keeping_unit.description %></td>
+        <td><%= stock_keeping_unit.price %></td>
+        <td><%= stock_keeping_unit.storage %></td>
+        <td><%= stock_keeping_unit.standard_product_unit_id %></td>
+        <td><%= link_to 'Show', stock_keeping_unit %></td>
+        <td><%= link_to 'Edit', edit_stock_keeping_unit_path(stock_keeping_unit) %></td>
+        <td><%= link_to 'Destroy', stock_keeping_unit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Stock Keeping Unit', new_stock_keeping_unit_path %>
