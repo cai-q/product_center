@@ -6,16 +6,10 @@ ActiveAdmin.setup do |config|
   #
   config.site_title = "Product Center"
 
-  class MyFooter < ActiveAdmin::Component
-    def build
-      super(id: "footer")
-      para "Copyright #{Date.today.year} © #{link_to('ohmate', 'http://www.ohmate.com.cn')}".html_safe
-    end
-  end
+  config.footer = "Copyright #{Date.today.year} © <a href=\"http://www.ohmate.com.cn\">易康伴侣</a>".html_safe
 
-  config.view_factory.footer = MyFooter
 
-  # Set the link url for the title. For example, to take
+      # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
   #
   # config.site_title_link = "/"
