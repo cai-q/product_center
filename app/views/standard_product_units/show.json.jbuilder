@@ -1,1 +1,0 @@
-json.partial! "standard_product_units/standard_product_unit", standard_product_unit: @standard_product_unit

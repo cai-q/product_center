@@ -1,1 +1,0 @@
-json.partial! "stock_keeping_units/stock_keeping_unit", stock_keeping_unit: @stock_keeping_unit
