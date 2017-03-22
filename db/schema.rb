@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170301070244) do
+ActiveRecord::Schema.define(version: 20170322075035) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -41,6 +41,21 @@ ActiveRecord::Schema.define(version: 20170301070244) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "commodities", force: :cascade do |t|
+    t.integer  "product_id"
+    t.integer  "supplier_id"
+    t.string   "model"
+    t.string   "specification"
+    t.decimal  "price"
+    t.integer  "storage"
+    t.decimal  "tax"
+    t.integer  "outer_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["product_id"], name: "index_commodities_on_product_id"
+    t.index ["supplier_id"], name: "index_commodities_on_supplier_id"
   end
 
   create_table "oauth_access_grants", force: :cascade do |t|
@@ -81,22 +96,21 @@ ActiveRecord::Schema.define(version: 20170301070244) do
     t.index ["uid"], name: "index_oauth_applications_on_uid", unique: true
   end
 
-  create_table "standard_product_units", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.string   "image_url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.string   "manufacturer"
+    t.string   "origin"
+    t.string   "image_header"
+    t.string   "image_thumbnail"
+    t.text     "detail"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
-  create_table "stock_keeping_units", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.decimal  "price"
-    t.integer  "storage"
-    t.integer  "standard_product_unit_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+  create_table "suppliers", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

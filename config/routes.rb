@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root "application#index"
+  resources :commodities
+  resources :suppliers
+  root "admin/dashboard#index"
   use_doorkeeper
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
