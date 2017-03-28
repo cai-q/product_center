@@ -13,5 +13,6 @@ module ProductCenter
     # -- all .rb files in that directory are automatically loaded.
     config.autoload_paths += Dir["#{config.root}/lib/**/"]
     config.time_zone = 'Asia/Shanghai'
+    config.autoload_paths += %w(#{config.root}/app/models/ckeditor)
   end
 end
