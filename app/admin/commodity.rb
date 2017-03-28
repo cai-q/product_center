@@ -1,17 +1,18 @@
 ActiveAdmin.register Commodity do
+  belongs_to :product, optional: true
+  permit_params :product_id, :model, :specification, :price, :storage, :tax, :image, :outer_id
 
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if params[:action] == 'create' && current_user.admin?
-#   permitted
-# end
-
-
+  form do |f|
+    inputs :product, :model, :specification, :price, :storage, :tax, :outer_id
+    inputs 'image', multipart: true do
+      input :image,
+            as: :file,
+            hint: if object.image.exists?
+                    image_tag(object.image.url, height: 50)
+                  else
+                    content_tag(:span, 'no image')
+                  end
+    end
+    actions
+  end
 end
