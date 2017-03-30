@@ -54,11 +54,12 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'ckeditor'
 gem 'devise'
 gem 'devise-i18n'
 gem 'doorkeeper'
 gem 'doorkeeper-i18n'
-gem 'qiniu'
-gem 'ckeditor'
-gem 'paperclip'
 gem 'draper', '3.0.0.pre1'
+gem 'paperclip'
+gem 'pundit'
+gem 'qiniu'
