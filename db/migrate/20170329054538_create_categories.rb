@@ -6,8 +6,8 @@ class CreateCategories < ActiveRecord::Migration[5.0]
     end
 
     create_table :categories_commodities do |t|
-      t.belongs_to :categories, index: true
-      t.belongs_to :commodities, index: true
+      t.belongs_to :category, index: true
+      t.belongs_to :commodity, index: true
       t.timestamps
     end
   end

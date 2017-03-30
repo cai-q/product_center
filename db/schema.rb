@@ -50,12 +50,12 @@ ActiveRecord::Schema.define(version: 20170329054538) do
   end
 
   create_table "categories_commodities", force: :cascade do |t|
-    t.integer  "categories_id"
-    t.integer  "commodities_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["categories_id"], name: "index_categories_commodities_on_categories_id"
-    t.index ["commodities_id"], name: "index_categories_commodities_on_commodities_id"
+    t.integer  "category_id"
+    t.integer  "commodity_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["category_id"], name: "index_categories_commodities_on_category_id"
+    t.index ["commodity_id"], name: "index_categories_commodities_on_commodity_id"
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|
