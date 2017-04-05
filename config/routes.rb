@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount ApplicationAPI => '/api'
   resources :categories
   mount Ckeditor::Engine => '/ckeditor'
   resources :commodities

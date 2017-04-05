@@ -14,5 +14,8 @@ module ProductCenter
     config.autoload_paths += Dir["#{config.root}/lib/**/"]
     config.time_zone = 'Asia/Shanghai'
     config.autoload_paths += %w(#{config.root}/app/models/ckeditor)
+
+    config.paths.add File.join('app', 'api'), glob: File.join('**', '*.rb')
+    config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
   end
 end
